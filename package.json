@@ -1,0 +1,19 @@
+{
+  "name": "nextar",
+  "version": "1.0.0",
+  "description": "Desafio Nextar",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "nodejs",
+    "nextar"
+  ],
+  "author": "Cássio Luis",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.5.2"
+  }
+}
