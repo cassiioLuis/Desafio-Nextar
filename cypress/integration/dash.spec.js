@@ -1,6 +1,5 @@
 import dashPage from '../support/pages/dashboard'
 
-
 describe('validar apresentação dashboar', function () {
 
     context('quando pesquiso por um produto', function () {
@@ -39,6 +38,23 @@ describe('validar apresentação dashboar', function () {
             dashPage.shouldHaveTotalPrice(total)
         })
 
+    })
+
+    context('quando removo itens que estavam no do carrinho', function () {
+
+        const product = 'Cabo p2'
+
+        before(function () {
+            dashPage.go()
+            dashPage.add(product)
+        })
+
+        it('não deve conter itens no carrinho', function () {
+            dashPage.remove(product)
+
+            dashPage.shouldNotBeVisibleTextCart()
+            dashPage.shouldHaveTotalPrice('0,00')
+        })
     })
 
 })
